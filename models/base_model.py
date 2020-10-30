@@ -7,7 +7,7 @@ this module contains the base class "BaseModel".
 
 import uuid
 from datetime import datetime
-
+from models import storage
 
 class BaseModel:
     """
@@ -28,6 +28,7 @@ class BaseModel:
                 elif key == 'created_at':
                     self.created_at = datetime.strptime(value,
                                                         "%Y-%m-%dT%H:%M:%S.%f")
+                    print("kwargs", type(self.created_at))
                 elif key == 'updated_at':
                     self.updated_at = datetime.strptime(value,
                                                         "%Y-%m-%dT%H:%M:%S.%f")
@@ -38,7 +39,11 @@ class BaseModel:
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
+            print("Hola ", type(self.created_at))
             self.updated_at = datetime.now()
+            print(self.to_dict())
+            storage.new(self)
+
 
     def __str__(self):
         """
@@ -57,6 +62,7 @@ class BaseModel:
         """
 
         self.updated_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         """
@@ -64,7 +70,10 @@ class BaseModel:
         the classes and the name of the class.
         """
         my_dict = self.__dict__
-        my_dict['created_at'] = self.created_at.strftime("%Y-%m-%dT%H:%M:%S.%f")
-        my_dict['updated_at'] = self.updated_at.strftime("%Y-%m-%dT%H:%M:%S.%f")
+        print("Hola1 ", type(my_dict['created_at']))
+        my_dict['created_at'] = self.created_at.strftime(
+            "%Y-%m-%dT%H:%M:%S.%f")
+        my_dict['updated_at'] = self.updated_at.strftime(
+            "%Y-%m-%dT%H:%M:%S.%f")
         my_dict['__class__'] = self.__class__.__name__
         return my_dict
