@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 '''
 '''
+
+
 import json
 
 
@@ -12,17 +14,23 @@ class FileStorage:
     __objects = {}
 
     def all(self):
-        return __class__.__objects
+        return self.__objects
 
     def new(self, obj):
 
-       keys = obj["__class__"] + '.' + obj["id"]
-       __class__.__objects[keys]=obj
+        if obj is not None:
+            keys = obj.__class__.__name__ + '.' + obj.id
+            to_dict = obj.to_dict()
+            self.__objects[keys] = to_dict
 
     def save(self):
-        print("Hola paso por aqui")
-        with open(self.__file_path,'w', encoding = "utf-8") as files:
-            json_str=json.dumps(__class__.__objects)
-            files.write(json_str)
+        with open(self.__file_path, 'w', encoding="utf-8") as files:
+            abc = json.dumps(self.__objects)
+            files.write(abc)
+
     def reload(self):
-        pass
+        try:
+            with open(self.__file_path, 'r', encoding="utf-8") as files:
+                self.__objects = json.load(files)
+        except:
+            pass
