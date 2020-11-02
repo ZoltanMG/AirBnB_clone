@@ -2,6 +2,7 @@
 """AirBnB Console"""
 
 import cmd
+from models.user import User
 
 class HBNBCommand(cmd.Cmd):
     """ Class HBNB to read command """
