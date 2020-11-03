@@ -1,15 +1,17 @@
 #!/usr/bin/python3
-
 """
 Place class inheriting from BaseModel
 """
+
 
 from models.base_model import BaseModel
 
 
 class Place(BaseModel):
-    """ Place class that define public class atributies
-    like string empty, integer and empty list"""
+    """
+    Place class that define public class atributies
+    like string empty, integer and empty list
+    """
 
     city_id = ""
     user_id = ""

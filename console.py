@@ -9,27 +9,37 @@ from models.base_model import BaseModel
 
 
 class HBNBCommand(cmd.Cmd):
-    """ Class HBNB to read command """
+    """
+    Class HBNB to read command
+    """
 
     prompt = '(hbnb) '
 
     def do_quit(self, args):
-        """Quit command to exit the program"""
+        """
+        Quit command to exit the program
+        """
 
         return True
 
     def do_EOF(self, args):
-        """EOF command to exit the program"""
+        """
+        EOF command to exit the program
+        """
 
         return True
 
     def emptyline(self):
-        """Pass if no command is given"""
+        """
+        Pass if no command is given
+        """
 
         pass
 
     def do_create(self, args):
-        """create an instance of the class"""
+        """
+        create an instance of the class
+        """
 
         commands = args.split()
         if len(commands) == 0:
