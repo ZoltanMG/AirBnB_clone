@@ -90,3 +90,10 @@ class FileStorage:
                     value['updated_at'] = new_time
         except:
             pass
+
+    def delete(self, key):
+        """
+        """
+
+        del self.__objects[key]
+        self.save()
