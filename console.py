@@ -28,8 +28,7 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, args):
-        """
-        """
+        """create an instance of the class"""
 
         commands = args.split()
         if len(commands) == 0:
@@ -44,6 +43,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, args):
         """
+        shows a specific item saved
         """
 
         commands = args.split()
@@ -65,6 +65,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, args):
         """
+        remove an item from the list
         """
 
         commands = args.split()
@@ -87,6 +88,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, args):
         """
+        shows all saved instances
         """
 
         objects = storage.all()
@@ -109,6 +111,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, args):
         """
+        update an instance
         """
 
         objects = storage.all()

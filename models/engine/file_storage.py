@@ -93,6 +93,8 @@ class FileStorage:
 
     def delete(self, key):
         """
+        Removes an element from the __objects variable and saves the changes to
+        the file specified in __file_path.
         """
 
         del self.__objects[key]
