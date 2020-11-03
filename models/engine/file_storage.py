@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 This module allows you to create, save and load dictionaries
 based on previouslycreated objects, all this is generated
@@ -90,3 +90,12 @@ class FileStorage:
                     value['updated_at'] = new_time
         except:
             pass
+
+    def delete(self, key):
+        """
+        Removes an element from the __objects variable and saves the changes to
+        the file specified in __file_path.
+        """
+
+        del self.__objects[key]
+        self.save()
