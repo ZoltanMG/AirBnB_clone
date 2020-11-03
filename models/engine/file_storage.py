@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 This module allows you to create, save and load dictionaries
 based on previouslycreated objects, all this is generated
