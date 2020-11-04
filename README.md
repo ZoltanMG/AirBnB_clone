@@ -87,14 +87,14 @@ This proyect was realized  by instruction set:
 
 #### Installing
 You will need to clone the repository of the project from Github. This will contain the simple shell program and all of its dependencies.
->Vagrant$ git clone https://github.com/CBarreiro96/AirBnB_clone
+>user@ubuntu$ git clone https://github.com/CBarreiro96/AirBnB_clone
 
 After you have cloned the repository, you are going to find a folder called AirBnB_clone. In this folder you find several file that these allow the program to work.
 
 The first step that you need to do is:
->Vagrant$ **cd AirBnB/**
+>user@ubuntu$ **cd AirBnB/**
 >
->Vagrant/AirBnB$ **ls**
+>user@ubuntu:~/AirBnB$ **ls**
 
 In this file you find these files:
 
@@ -111,6 +111,16 @@ In this file you find these files:
 | [models/review.py](https://github.com/CBarreiro96/AirBnB_clone/blob/main/models/review.py "File review") | Review class inheriting from BaseModel |
 | [models/user.py](https://github.com/CBarreiro96/AirBnB_clone/blob/main/models/user.py "File user") | User inheriting from BaseModel |
 | [tests](https://github.com/CBarreiro96/AirBnB_clone/blob/main/models/user.py "File user") | This is a directory that you can find all tests did in this proyect |
+### Uses of Console
+In this section, you are going to learn How can you do this proyect?, so you can use this project of two way: Interactive mode or Non interactive mode, If you would like use interactive mode you have to write ```./console.py```, but if you would like to use Non interactive you have to write ```echo "<command>" | ./console.py``` 
+The first time you don't have anything store in the console, if you put the command all after you start console, It doesn't print anything.
+```
+user@ubuntu::~/AirBnB$ ./console.py
+(hbn)all
+[]
+(hbn)
+```
+Now, we are going to create 
 
 ## Build with
 ```

@@ -49,7 +49,6 @@ class BaseModel:
         In this method the date and time of
         modification of the class is updated.
         """
-
         self.updated_at = datetime.now()
         storage.new(self)
         storage.save()
