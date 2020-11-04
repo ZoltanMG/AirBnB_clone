@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-this module contains the base class "BaseModel".
-
+This module contains the base class "BaseModel"
+this class is the base class of the project.
 """
 
 
@@ -12,8 +12,8 @@ from models import storage
 
 class BaseModel:
     """
-    this is the base class that will be inherited in the other classes.
-
+    This is the base class that will be inherited
+    in the other classes.
     """
 
     def __init__(self, *args, **kwargs):
@@ -46,7 +46,7 @@ class BaseModel:
 
     def save(self):
         """
-        in this method the date and time of
+        In this method the date and time of
         modification of the class is updated.
         """
 
@@ -56,7 +56,7 @@ class BaseModel:
 
     def to_dict(self):
         """
-        in this method a dictionary is returned with the attributes of
+        In this method a dictionary is returned with the attributes of
         the classes and the name of the class.
         """
 

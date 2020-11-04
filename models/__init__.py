@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-storage module
+This module creates an instance of the FileStorege class which interacts
+between the instances of the BaseModel class and the file.json file
+that contains the information of the created objects.
 """
 
 

@@ -1,5 +1,6 @@
 """
-test module
+This module performs the tests of
+the base model module.
 """
 
 
@@ -9,10 +10,16 @@ from datetime import datetime
 
 
 class Test_BaseModel(unittest.TestCase):
-    """ Test the base model class """
+    """
+    In this class the methods to generate
+    the tests are generated.
+    """
 
     def test_types(self):
-        """ Type of argument """
+        """
+        This method validates the data
+        types of the attributes.
+        """
 
         base = BaseModel()
         self.assertEqual(type(base.id), str)
