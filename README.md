@@ -4,7 +4,7 @@
   <img src="https://user-images.githubusercontent.com/66263776/97637714-299b3f00-1a09-11eb-824d-23b81263f96c.png" width="500" height= "200">
 </p>
 
-**AirBnB** is a website that you can find option about places that you can travel. In this project we are going to deploy a simple copy of the [AirBnB website](https://www.airbnb.com.co/?_set_bev_on_new_domain=1603810323_whaprsZfQ18Pr9Cb).That Divided diferent step like:
+**AirBnB** is a website that you can find option about places that you can travel. In this project we are going to deploy a simple copy of the [AirBnB website](https://www.airbnb.com.co/?_set_bev_on_new_domain=1603810323_whaprsZfQ18Pr9Cb "Website").That Divided diferent step like:
 * The Console
 * Web Static
 * MySQL storage
@@ -12,7 +12,12 @@
 * RESTful API
 * Web dynamic
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/66263776/98057530-81261a00-1e10-11eb-9197-a5eb38a64be5.png" width="400" height= "200">
+</p>
+
 However in this repository we are going to show the first part of this project  that is **The console**
+
 ## :gem: Description of the project :gem: 
 ### The console
 <p align="center">
@@ -61,6 +66,20 @@ EOF  help  quit
 (hbnb) 
 $
 ```
+### :man_technologist: Arquitecture of the project :man_technologist:
+This proyect was realized  by instruction set:
+1) The first step 
+2)
+4) **Test** : It was realized to ensure that the program function, all files, classes, functions was tested with [unit_tests](https://docs.python.org/3.4/library/unittest.html#module-unittest "Unitest")
+
+### :eight_spoked_asterisk: Command :eight_spoked_asterisk:
+| Command | Usage |Description |
+| :---: | :---: |:---: |
+| quit *or* EOF |  | Exits the program |
+| Help | help **<command\>** | Provides a text describing how to use a command. |
+| Created | **<class name\>** |  create an object of the class declared by user; |
+| Show | show **<class name\> <id\>** |  create an object of the class declared by user; |
+| Updated | <class name\> <id\> <attribute name\> <attribute value\> |  create an object of the class declared by user; |
 
 ## :gem: Description of the command interpreter :gem:
 
@@ -68,18 +87,30 @@ $
 
 #### Installing
 You will need to clone the repository of the project from Github. This will contain the simple shell program and all of its dependencies.
->$ git clone https://github.com/CBarreiro96/AirBnB_clone
+>Vagrant$ git clone https://github.com/CBarreiro96/AirBnB_clone
 
 After you have cloned the repository, you are going to find a folder called AirBnB_clone. In this folder you find several file that these allow the program to work.
+
+The first step that you need to do is:
+>Vagrant$ **cd AirBnB/**
+>
+>Vagrant/AirBnB$ **ls**
+
+In this file you find these files:
+
 ####  File description.
 | File | Description |
 | :---: | :---: |
-| [AUTHORS]() | Contain of Authors of this project |
-| [models/base_models.py]() | Class that defines all common attributes/methods for other classes. |
-|[models/__ init __.py:]() | In this file you can find code about convert to integer to binary |
-|[models/engine/file_storage.py]() | Class that serializes instances to a JSON file and deserializes JSON file to instances |
-| [_putchar.c](https://github.com/CBarreiro96/printf/blob/master/_putchar.c "Printable Tools") | Contains the function to printf byte to byte (**write**) |
-| [man_3_printf](https://github.com/CBarreiro96/printf/blob/master/man_3_printf "Description") | It contain to description about printf |
+| [AUTHORS](https://github.com/CBarreiro96/AirBnB_clone/blob/main/AUTHORS "Authors of Project") | Contain of Authors of this project |
+| [models/base_models.py](https://github.com/CBarreiro96/AirBnB_clone/blob/main/models/base_model.py "base_models") | Class that defines all common attributes/methods for other classes. |
+|[models/__ init __.py:](https://github.com/CBarreiro96/AirBnB_clone/blob/main/models/__init__.py "Init") | In this file you can find code about convert to integer to binary |
+|[models/engine/file_storage.py](https://github.com/CBarreiro96/AirBnB_clone/blob/main/models/engine/file_storage.py "File_storage") | Class that serializes instances to a JSON file and deserializes JSON file to instances |
+| [models/amenity.py](https://github.com/CBarreiro96/AirBnB_clone/blob/main/models/amenity.py "File amenity") | Amenity class inheriting from BaseModel |
+| [models/city](https://github.com/CBarreiro96/AirBnB_clone/blob/main/models/city.py "File city") | City class inheriting from BaseModel |
+| [models/place.py](https://github.com/CBarreiro96/AirBnB_clone/blob/main/models/place.py "File place") | Place class inheriting from BaseModel |
+| [models/review.py](https://github.com/CBarreiro96/AirBnB_clone/blob/main/models/review.py "File review") | Review class inheriting from BaseModel |
+| [models/user.py](https://github.com/CBarreiro96/AirBnB_clone/blob/main/models/user.py "File user") | User inheriting from BaseModel |
+| [tests](https://github.com/CBarreiro96/AirBnB_clone/blob/main/models/user.py "File user") | This is a directory that you can find all tests did in this proyect |
 
 ## Build with
 ```
