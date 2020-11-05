@@ -24,9 +24,11 @@ However in this repository we are going to show the first part of this project  
   <img src="https://user-images.githubusercontent.com/66263776/97640151-28204580-1a0e-11eb-9e21-888830a67f3e.png" width="400" height= "200">
 </p>
 
-This first part **the console** about **AirBnB** is a command interpreter similar to a Linux shell but limited to a specific use-case; 
-
-This part can be work  in two diferent mode:
+This first part **the console** about **AirBnB** is a command interpreter similar to a Linux shell but this console his functions are:
+1) **Create** neww object(ex: new city, new user erc..)
+2) **Show** an object
+3) **Update** atributes of an object
+4) **Deestroy** an object  
 
 #### Interactive mode
 In this **Interactive** mode the console will display a prompt (hbnb), what it indicate is that user can write and execute a command. You need to run the the file ***./console.py***. and if you like exit of this place you need to write ***quit*** in the prompt.
@@ -66,20 +68,18 @@ EOF  help  quit
 (hbnb) 
 $
 ```
-### :man_technologist: Arquitecture of the project :man_technologist:
-This proyect was realized  by instruction set:
-1) The first step 
-2)
-4) **Test** : It was realized to ensure that the program function, all files, classes, functions was tested with [unit_tests](https://docs.python.org/3.4/library/unittest.html#module-unittest "Unitest")
+**Test** : It was realized to ensure that the program function, all files, classes, functions was tested with [unit_tests](https://docs.python.org/3.4/library/unittest.html#module-unittest "Unitest")
 
 ### :eight_spoked_asterisk: Command :eight_spoked_asterisk:
 | Command | Usage |Description |
 | :---: | :---: |:---: |
 | quit *or* EOF |  | Exits the program |
 | Help | help **<command\>** | Provides a text describing how to use a command. |
-| Created | **<class name\>** |  create an object of the class declared by user; |
-| Show | show **<class name\> <id\>** |  create an object of the class declared by user; |
-| Updated | <class name\> <id\> <attribute name\> <attribute value\> |  create an object of the class declared by user; |
+| Created | create **<class name\>** |  create an object of the class declared by user; |
+| Show | show **<class name\> <id\>** | Prints the string representation of an instance based on the class name and id  |
+| Updated | update<class name\> <id\> <attribute name\> <attribute value\> |  Updates an instance based on the class name and id by adding or updating attribute (saves the changes into a JSON file). |
+| all | all <class name\> |  Prints all string representation of all instances based on the class name. |
+| Destroy | destroy <class name\> <id\>  | Deletes an instance based on the class name and id . |
 
 ## :gem: Description of the command interpreter :gem:
 
@@ -114,6 +114,9 @@ In this file you find these files:
 ### Uses of Console
 In this section, you are going to learn How can you do this proyect?, so you can use this project of two way: Interactive mode or Non interactive mode, If you would like use interactive mode you have to write ```./console.py```, but if you would like to use Non interactive you have to write ```echo "<command>" | ./console.py``` 
 The first time you don't have anything store in the console, if you put the command all after you start console, It doesn't print anything.
+
+#### Interactive mode
+
 ```
 user@ubuntu::~/AirBnB$ ./console.py
 (hbn) all
@@ -149,7 +152,39 @@ Now, we are going to start with the command  ***create***   In this command you 
 ```
 As you can see, when we write *create BaseModel* you are going to create objects type of class that It store in the file file.jason, so you can create all class of this proyect and It store in this file. 
 On the other hand you can modify this Public atribute of this object typle class with the command **update**, in the next example you can find how you can use this.
+In this example we are going to change  the id of BaseModel
+```
+(hbnb) all BaseModel
+["[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'created_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903293), 'id': '49faff9a-6318-451f-87b6-910505c55907', 'updated_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903300)}"]
+(hbnb) update BaseModel 49faff9a-6318-451f-87b6-910505c55907 first_name "Betty"
+(hbnb) show BaseModel 49faff9a-6318-451f-87b6-910505c55907
+[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'first_name': 'Betty', 'id': '49faff9a-6318-451f-87b6-910505c55907', 'created_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903293), 'updated_at': datetime.datetime(2017, 10, 2, 3, 11, 3, 49401)}
+```
 
+### Non interactive mode
+```
+user@ubuntu:~/AirBnB$ echo "create BaseModel" | ./console.py
+(hbnb)
+49faff9a-6318-451f-87b6-910505c55907
+(hbnb) 
+user@ubuntu:~/AirBnB$
+
+user@ubuntu:~/AirBnB$ echo "all BaseModel" | ./console.py
+(hbnb)
+["[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'created_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903293), 'id': '49faff9a-6318-451f-87b6-910505c55907', 'updated_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903300)}"]
+(hbnb) 
+user@ubuntu:~/AirBnB$
+
+user@ubuntu:~/AirBnB$ echo "show BaseModel 49faff9a-6318-451f-87b6-910505c55907" | ./console.py
+(hbnb)
+[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'created_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903293), 'id': '49faff9a-6318-451f-87b6-910505c55907', 'updated_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903300)}(hbnb) 
+user@ubuntu:~/AirBnB$
+
+user@ubuntu:~/AirBnB$ echo "update BaseModel 49faff9a-6318-451f-87b6-910505c55907 first_name "Betty"" | ./console.py
+(hbnb)
+(hbnb) 
+user@ubuntu:~/AirBnB$
+```
 
 ## Build with
 ```
