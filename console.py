@@ -172,9 +172,10 @@ class HBNBCommand(cmd.Cmd):
                     objects[inst_key] = obj
         except KeyError:
             print("** no instance found **")
-        except NameError as err:
-            print(err)
+        except NameError:
             print("** class doesn't exist **")
+        except IndexError:
+            print('** value missing **')
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
