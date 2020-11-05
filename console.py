@@ -33,7 +33,7 @@ class HBNBCommand(cmd.Cmd):
         """
         EOF command to exit the program
         """
-
+        print()
         return True
 
     def emptyline(self):
@@ -55,6 +55,7 @@ class HBNBCommand(cmd.Cmd):
         try:
             my_model = eval('{}()'.format(commands[0]))
             my_model.save()
+            print(type(my_model))
             print(my_model.id)
         except NameError:
             print("** class doesn't exist **")
@@ -170,6 +171,8 @@ class HBNBCommand(cmd.Cmd):
         except NameError as err:
             print(err)
             print("** class doesn't exist **")
+
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
