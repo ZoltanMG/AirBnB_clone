@@ -1,9 +1,16 @@
+#!/usr/bin/python3
+
+"""
+Test_state class Unitest
+"""
+
+
 import unittest
-from datetime import datetime
-from models import *
+from models.state import State
+from models.base_model import BaseModel
 
 
-class Test_StateModel(unittest.TestCase):
+class Test_State(unittest.TestCase):
     """
     Test the state model class
     """

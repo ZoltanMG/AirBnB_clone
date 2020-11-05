@@ -1,6 +1,12 @@
+"""
+User class unitests
+"""
+
+
 import unittest
 from datetime import datetime
-from models import *
+from models.base_model import BaseModel
+from models.user import User
 
 
 class Test_UserModel(unittest.TestCase):

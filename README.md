@@ -116,11 +116,40 @@ In this section, you are going to learn How can you do this proyect?, so you can
 The first time you don't have anything store in the console, if you put the command all after you start console, It doesn't print anything.
 ```
 user@ubuntu::~/AirBnB$ ./console.py
-(hbn)all
+(hbn) all
 []
 (hbn)
 ```
-Now, we are going to create 
+Now, we are going to start with the command  ***create***   In this command you created diferent classes that this project have in the files like these:
+
+* BaseModel ------- (```Class```)
+* City ----------------- (```Inherited class from base models```)
+* Place ----------------- (```Inherited class from base models```)
+* Amenity ----------------- (```Inherited class from base models```)
+* State ----------------- (```Inherited class from base models```)
+* Review ----------------- (```Inherited class from base models```)
+
+
+--- ```Public instance atributes``` ---
+  * id
+  * created
+  * updated
+
+ 
+```
+(hbn) created BaseModel
+8ab395d2-ad4e-4fad-b9b1-82bb4ae274be
+(hbn) all
+["[BaseModel] (8ab395d2-ad4e-4fad-b9b1-82bb4ae274be) {'id': '8ab395d2-ad4e-4fad-b9b1-82bb4ae274be', 'created_at': datetime.datetime(2020, 11, 4, 19, 0, 4, 478376), 'updated_at': datetime.datetime(2020, 11, 4, 19, 0, 4, 478419)}"]
+(hbn)
+(hbn) create City
+2c14dea2-8c1d-4349-b969-81f05a0d9faa
+(hbn) all
+["[BaseModel] (1345c546-ad7c-42d7-a019-86b0ddc42b48){'id':'1345c546-ad7c-42d7-a019-86b0ddc42b48', 'created_at': datetime.datetime(2020, 11, 4, 22, 12, 36, 875690), 'updated_at': datetime.datetime(2020, 11,4, 22, 12, 36, 875730)}","[City](2c14dea2-8c1d-4349-b969-81f05a0d9faa){'id':'2c14dea2-8c1d-4349-b969-81f05a0d9faa', 'created_at': datetime.datetime(2020, 11, 4, 22, 12, 58, 815023), 'updated_at': datetime.datetime(2020, 11, 4, 22, 12, 58, 815072)}"]
+```
+As you can see, when we write *create BaseModel* you are going to create objects type of class that It store in the file file.jason, so you can create all class of this proyect and It store in this file. 
+On the other hand you can modify this Public atribute of this object typle class with the command **update**, in the next example you can find how you can use this.
+
 
 ## Build with
 ```

@@ -1,9 +1,16 @@
+#!/usr/bin/python3
+"""
+City class Unitest
+"""
+
+
 import unittest
 from datetime import datetime
-from models import *
+from models.base_model import BaseModel
+from models.city import City
 
 
-class Test_CityModel(unittest.TestCase):
+class Test_City(unittest.TestCase):
     """
     Test the city model class
     """
