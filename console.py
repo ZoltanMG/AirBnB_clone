@@ -114,7 +114,12 @@ class HBNBCommand(cmd.Cmd):
         commands = args.split()
         if len(commands) == 0:
             for key, value in objects.items():
-                ls_obj.append(str(value))
+                if type(value) is not dict:
+                    ls_obj.append(str(value))
+                else:
+                    ls_obj.append("[{}] ({}) {}".format(value['__class__'],
+                                                        value['id'],
+                                                        str(value)))
             print(ls_obj)
             return
         try:
@@ -122,7 +127,12 @@ class HBNBCommand(cmd.Cmd):
             for key, value in objects.items():
                 name_cls = key.split('.')
                 if commands[0] == name_cls[0]:
-                    ls_obj.append(str(value))
+                    if type(value) is not dict:
+                        ls_obj.append(str(value))
+                    else:
+                        ls_obj.append("[{}] ({}) {}".format(value['__class__'],
+                                                            value['id'],
+                                                            str(value)))
             print(ls_obj)
         except NameError as err:
             print("** class doesn't exist **")
