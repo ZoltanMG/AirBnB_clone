@@ -164,8 +164,12 @@ class HBNBCommand(cmd.Cmd):
                     print("** value missing **")
 
                 obj = objects[inst_key]
-                obj.__dict__[commands[2]] = commands[3].replace('\"', '')
-                obj.save()
+                if type(obj) is not dict:
+                    obj.__dict__[commands[2]] = commands[3].replace('\"', '')
+                    obj.save()
+                else:
+                    obj[commands[2]] = commands[3].replace('\"', '')
+                    objects[inst_key] = obj
         except KeyError:
             print("** no instance found **")
         except NameError as err:
