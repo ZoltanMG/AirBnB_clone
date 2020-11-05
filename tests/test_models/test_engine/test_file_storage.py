@@ -1,15 +1,28 @@
+#!/usr/bin/python3
 """
 Module of test FileStorage
 """
 
 
 import unittest
+from models.base_model import BaseModel
+from models.engine.file_storage import FileStorage
 
 
 class TestFileStorage(unittest.TestCase):
     '''
     Test cases for file_storage class
     '''
+
+    def test_checking_for_docstring_FileStorage(self):
+        """checking for docstrings"""
+
+        self.assertIsNotNone(FileStorage.__doc__)
+        self.assertIsNotNone(FileStorage.new.__doc__)
+        self.assertIsNotNone(FileStorage.reload.__doc__)
+        self.assertIsNotNone(FileStorage.save.__doc__)
+        self.assertIsNotNone(FileStorage.delete.__doc__)
+        self.assertIsNotNone(FileStorage.all.__doc__)
 
     def setUp(self):
         '''
