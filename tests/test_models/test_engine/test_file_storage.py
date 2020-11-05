@@ -16,14 +16,6 @@ class TestFileStorage(unittest.TestCase):
     Test cases for file_storage class
     '''
 
-    def test_checking_for_docstring_FileStorage(self):
-        """checking for docstrings"""
-
-        self.assertIsNotNone(FileStorage.__doc__)
-        self.assertIsNotNone(FileStorage.new.__doc__)
-        self.assertIsNotNone(FileStorage.save.__doc__)
-        self.assertIsNotNone(FileStorage.delete.__doc__)
-
     def setUp(self):
         '''
         simple set up
