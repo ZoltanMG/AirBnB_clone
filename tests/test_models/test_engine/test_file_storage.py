@@ -7,6 +7,8 @@ Module of test FileStorage
 import unittest
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
+import json
+import os
 
 
 class TestFileStorage(unittest.TestCase):
@@ -43,6 +45,25 @@ class TestFileStorage(unittest.TestCase):
         tests if all returns a dict
         '''
         self.assertIsInstance(self.storage.all(), dict)
+
+    def test_save(self):
+        '''
+        tests the save method of file storage class
+        '''
+        self.storage.save()
+        self.assertTrue(os.path.exists("file.json"))
+
+    def test_json_file_content_type(self):
+        '''
+        tests if the content of the json file is type dict
+        '''
+        self.storage.save()
+        self.storage.new(self.my_model)
+
+        with open("file.json", encoding='utf-8') as fd:
+            data = json.load(fd)
+
+        self.assertIsInstance(data, dict)
 
 if __name__ == "__main__":
     unittest.main()
