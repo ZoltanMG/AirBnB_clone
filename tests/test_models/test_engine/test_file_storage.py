@@ -19,10 +19,8 @@ class TestFileStorage(unittest.TestCase):
 
         self.assertIsNotNone(FileStorage.__doc__)
         self.assertIsNotNone(FileStorage.new.__doc__)
-        self.assertIsNotNone(FileStorage.reload.__doc__)
         self.assertIsNotNone(FileStorage.save.__doc__)
         self.assertIsNotNone(FileStorage.delete.__doc__)
-        self.assertIsNotNone(FileStorage.all.__doc__)
 
     def setUp(self):
         '''
