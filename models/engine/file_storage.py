@@ -59,14 +59,9 @@ class FileStorage:
         new_object = {}
 
         with open(self.__file_path, 'w', encoding="utf-8") as files:
-            for key, value in self.__objects.items():
-                if type(value) != dict:
-                    new_object[key] = value.to_dict()
-                else:
-                    new_value = value.copy()
-                    new_value['created_at'] = value['created_at'].isoformat()
-                    new_value['updated_at'] = value['updated_at'].isoformat()
-                    new_object[key] = new_value
+            new_dict = self.__objects.copy()
+            for key, value in new_dict.items():
+                new_object[key] = value.to_dict()
             abc = json.dumps(new_object)
             files.write(abc)
 
@@ -76,18 +71,20 @@ class FileStorage:
         the __file_path variable and transforms it into a dictionary
         to be stored in the __objects variable.
         """
+        from models.base_model import BaseModel
+        from models.user import User
+        from models.state import State
+        from models.city import City
+        from models.amenity import Amenity
+        from models.place import Place
+        from models.review import Review
 
         try:
             with open(self.__file_path, 'r', encoding="utf-8") as files:
                 self.__objects = json.load(files)
 
                 for key, value in self.__objects.items():
-                    time = value['created_at']
-                    new_time = datetime.strptime(time, "%Y-%m-%dT%H:%M:%S.%f")
-                    value['created_at'] = new_time
-                    time = value['updated_at']
-                    new_time = datetime.strptime(time, "%Y-%m-%dT%H:%M:%S.%f")
-                    value['updated_at'] = new_time
+                    self.new(eval(value['__class__'])(**value))
         except:
             pass
 
